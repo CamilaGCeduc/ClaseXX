@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+		<p>Ingresar los primeros enteros separados por comas</p>
+	<input type="text" id="primera">
+
+	<p>Ingresar los segundos enteros separados por comas</p>
+	<input type="text" id="segunda">
+	<p><input type="button" value="Concatenar" onclick="concatenar()"></p>
+	<input type="button" value="Reiniciar" onclick="Reiniciar()">
+
+	<p id="resultado"></p>
+
+	<script>
+
+
+	function primera()
+	{
+		document.getElementById("primera").value= "12,15,29,37,85";
+	}
+	var miri=[];
+	function segunda(){
+	//Insertaré el ejemplo de modo aleatorio
+
+		for(i=0;i<5;i++)
+		{
+			miri.push(parseInt(Math.random()*100));
+
+		}
+		document.getElementById("segunda").value= miri;
+	}
+
+	var aux=[];
+	function concatenar(){
+
+		var array1=document.getElementById("primera").value.split(/,/);
+		var array2=document.getElementById("segunda").value.split(/,/);
+		for(i=0;i<array1.length;i++)
+		{
+			aux.push(array1[i]);
+			aux.push(array2[i]);
+		}	
+		document.getElementById("resultado").innerHTML=aux;
+
+
+	}
+
+	function alerta(){
+		window.alert("Se deben ingresar 2 o más valores. Reintentar.");
+	}
+
+	function Reiniciar(){
+		window.location.href = 'ejer2.html'; 
+		//location.reload(); //recargar la página web
+	}
+
+
+
+</script>
+</body>
+</html>

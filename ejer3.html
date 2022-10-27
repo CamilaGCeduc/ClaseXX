@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo">Números aleatorios</p>
+    <input type="text" id="aleatorio">
+    <input type="button" value="aleatorio" onclick="aleatorio()">
+
+    <input type="button" value="Reiniciar" onclick="Reiniciar()">
+
+    <p id="resultado"></p>
+    <script>
+
+    var miri=[];
+    var aux=[];
+    function aleatorio(){
+    
+
+        for(i=0;i<4;i++)
+        {
+            miri.push(parseInt(Math.random()*100));
+
+        }
+        document.getElementById("aleatorio").value= miri;
+
+    var array2=document.getElementById("aleatorio").value.split(/,/);
+    for(i=0;i<array2.length;i++)
+        {
+            
+            aux.push(array2[i]);
+        }	
+            
+        document.getElementById("resultado").innerHTML=aux;
+
+    }
+
+
+
+
+    function Reiniciar(){
+        window.location.href = 'ejer3.html'; 
+        //location.reload(); //recargar la página web
+    }
+    </script>
+</body>
+</html>
